@@ -60,6 +60,11 @@ int main() {
                     cin >> playAgain;
                     Game.changePlayer(); // Let user always be player 1
                 }
+                else if(Game.isBoardFull()){ // Board is full without a winner
+                    cout << "Draw." << endl;
+                    cout << "Play again? (y/n)" << endl;
+                    cin >> playAgain;
+                }
                 else if (Game.getCurrentPlayerNumber() == 2) { // Computer acts by random number
                     srand(time(0));
                     while(!Game.placeMark(inputRow - 1, inputCol - 1)){
@@ -72,12 +77,6 @@ int main() {
                         cout << "Play again? (y/n)" << endl;
                         cin >> playAgain;
                     }
-                }
-
-                if(Game.isBoardFull()){ // Board is full without a winner
-                    cout << "Draw." << endl;
-                    cout << "Play again? (y/n)" << endl;
-                    cin >> playAgain;
                 }
             }
         }
@@ -121,6 +120,11 @@ int main() {
                     cin >> playAgain;
                     Game.changePlayer(); // Let the first player be player 1
                 }
+                else if(Game.isBoardFull()){ // Board is full without a winner
+                    cout << "Draw." << endl;
+                    cout << "Play again? (y/n)" << endl;
+                    cin >> playAgain;
+                }
                 else if(Game.getCurrentPlayerNumber() == 2){ // Turn of player 2
                     cout << "Player 2, take your turn!" << endl;
                     cout << "Row:";
@@ -153,11 +157,6 @@ int main() {
                         cin >> playAgain;
                     }
 
-                    if(Game.isBoardFull()){ // Board is full without a winner
-                        cout << "Draw." << endl;
-                        cout << "Play again? (y/n)" << endl;
-                        cin >> playAgain;
-                    }
                 }
             }
         }
